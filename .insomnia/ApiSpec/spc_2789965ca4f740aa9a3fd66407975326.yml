@@ -1,7 +1,7 @@
 _id: spc_2789965ca4f740aa9a3fd66407975326
 type: ApiSpec
 parentId: wrk_fa1347018fb348f79356e6a4ae51442e
-modified: 1628839335915
+modified: 1628839464135
 created: 1628825656815
 fileName: INFO_HELPDESK
 contents: >-
@@ -101,7 +101,45 @@ contents: >-
           "405":
             description: "Method not allowed"
     /hit/modul/{id}:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari data modul di aplikasi helpdesk"
+        description: "Mencari data modul di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "kode_service"
+          in: "query"
+          description: "ID layanan yang spesifik"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
     /hit/status/{id}:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari data status permintaan di aplikasi helpdesk"
+        description: "Mencari data status permintaan di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "kode_status"
+          in: "query"
+          description: "ID status yang spesifik"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
     /hit/ticket/{id}:
     /hit/ticket/{id}/bulan/{bulan}:
     /hit/ticket/{id}/bulan/{bulan}/category/{detail}:
