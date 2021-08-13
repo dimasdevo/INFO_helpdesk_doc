@@ -1,0 +1,24 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e4da0ee9b
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
+modified: 1628839687173
+created: 1628839687173
+url: "{{ base_url }}/hit/status/{{ id }}"
+name: Mencari data status permintaan di aplikasi helpdesk
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: kode_status
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1628839687173
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
