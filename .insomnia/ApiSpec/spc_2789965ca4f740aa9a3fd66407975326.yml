@@ -1,0 +1,69 @@
+_id: spc_2789965ca4f740aa9a3fd66407975326
+type: ApiSpec
+parentId: wrk_fa1347018fb348f79356e6a4ae51442e
+modified: 1628838790918
+created: 1628825656815
+fileName: INFO_HELPDESK
+contents: |-
+  openapi: "3.0.0"
+  info:
+    description: "Merupakan data dari aplikasi helpdesk"
+    version: "1.0.0"
+    title: "Helpdesk API GENERAL"
+    termsOfService: "https://helpdesk-api.indonesian-aerospace.com"
+    contact:
+      email: "infosupport@indonesian-aerospace.com"
+  servers:
+    - url: "http://api"
+    - url: "http://helpdesk-api-dev"
+    - url: "http://helpdesk-api-test"
+    - url: "https://helpdesk-api.indonesian-aerospace.com"
+  tags:
+  - name: "General"
+    description: "Semua tentang data helpdesk general data"
+  - name: "Admin"
+    description: "Semua tentang data helpdesk layanan admin"
+  - name: "Aplikasi"
+    description: "Semua tentang data helpdesk layanan aplikasi"
+  - name: "Email"
+    description: "Semua tentang data helpdesk layanan email"
+  - name: "Internet"
+    description: "Semua tentang data helpdesk layanan internet"
+  - name: "SAP"
+    description: "Semua tentang data helpdesk layanan sap"
+  paths:
+    /hit/service/{id}:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari data layanan di aplikasi helpdesk"
+        description: "Mencari data layanan di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "id"
+          in: "path"
+          description: "ID layanan yang spesifik"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    /hit/request/{id}:
+    /hit/operation/{id}:
+    /hit/modul/{id}:
+    /hit/status/{id}:
+    /hit/ticket/{id}:
+    /hit/ticket/{id}/bulan/{bulan}:
+    /hit/ticket/{id}/bulan/{bulan}/category/{detail}:
+    /hit/ticket/{id}/tahun/{tahun}:
+    /hit/ticket/{id}/tahun/{tahun}/category/{detail}:
+    /hit/activity/{id}:
+    /hit/reference/{aksi}/{id}:
+    /hit/menu/{id}:
+    /hit/log/email/{id}:
+    /hit/manager/{id}:
+contentType: yaml

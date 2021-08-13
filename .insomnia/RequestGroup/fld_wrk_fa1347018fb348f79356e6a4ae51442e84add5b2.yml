@@ -1,0 +1,10 @@
+_id: fld_wrk_fa1347018fb348f79356e6a4ae51442e84add5b2
+type: RequestGroup
+parentId: wrk_fa1347018fb348f79356e6a4ae51442e
+modified: 1628837414194
+created: 1628837414194
+name: Email
+description: Semua tentang data helpdesk layanan email
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1628837414194

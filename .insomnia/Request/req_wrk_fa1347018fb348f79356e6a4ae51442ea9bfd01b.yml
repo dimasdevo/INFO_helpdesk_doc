@@ -1,0 +1,21 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442ea9bfd01b
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
+modified: 1628837414168
+created: 1628837414168
+url: "{{ base_url }}/hit/service/{{ id }}"
+name: Mencari data layanan di aplikasi helpdesk
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1628837414168
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
