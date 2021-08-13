@@ -1,24 +1,28 @@
 _id: spc_2789965ca4f740aa9a3fd66407975326
 type: ApiSpec
 parentId: wrk_fa1347018fb348f79356e6a4ae51442e
-modified: 1628838790918
+modified: 1628839335915
 created: 1628825656815
 fileName: INFO_HELPDESK
-contents: |-
+contents: >-
   openapi: "3.0.0"
+
   info:
-    description: "Merupakan data dari aplikasi helpdesk"
+    description: "<b>Helpdesk API</b> adalah modul dari aplikasi info yang berisikan data permintaan dan layanan yang dimiliki oleh divisi IT"
     version: "1.0.0"
-    title: "Helpdesk API GENERAL"
-    termsOfService: "https://helpdesk-api.indonesian-aerospace.com"
+    title: "Helpdesk API"
+    termsOfService: "https://info.indonesian-aerospace.com/helpdesk"
     contact:
-      email: "infosupport@indonesian-aerospace.com"
+      email: 
+        - "infosupport@indonesian-aerospace.com"
+        - "ervin@indonesian-aerospace.com"
   servers:
     - url: "http://api"
     - url: "http://helpdesk-api-dev"
     - url: "http://helpdesk-api-test"
     - url: "https://helpdesk-api.indonesian-aerospace.com"
   tags:
+
   - name: "General"
     description: "Semua tentang data helpdesk general data"
   - name: "Admin"
@@ -53,7 +57,49 @@ contents: |-
           "405":
             description: "Method not allowed"
     /hit/request/{id}:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari data permintaan di aplikasi helpdesk"
+        description: "Mencari data permintaan di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "kode_service"
+          in: "query"
+          description: "ID layanan yang spesifik"
+          type: "string"
+        - name: "nik"
+          in: "query"
+          description: "NIK Karyawan"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
     /hit/operation/{id}:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari data menu operator di aplikasi helpdesk"
+        description: "Mencari data menu operator di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "kode_service"
+          in: "query"
+          description: "ID layanan yang spesifik"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
     /hit/modul/{id}:
     /hit/status/{id}:
     /hit/ticket/{id}:
