@@ -1,23 +1,32 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442eb70851b3
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442eb2685c88
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629799255825
-created: 1629799255825
-url: "{{ base_url }}/hit/request/{{ id }}"
-name: Mencari permintaan
+modified: 1629799255799
+created: 1629799255799
+url: "{{ base_url }}/hit/activity"
+name: Mencari aktifitas
 description: ""
 method: GET
 body: {}
 parameters:
-  - name: kode_service
+  - name: status
     disabled: true
     value: undefined
   - name: nik
     disabled: true
     value: undefined
+  - name: ticket
+    disabled: true
+    value: undefined
+  - name: limit
+    disabled: true
+    value: undefined
+  - name: offset
+    disabled: true
+    value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1629799255825
+metaSortKey: -1629799255799
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

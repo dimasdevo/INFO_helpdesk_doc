@@ -1,17 +1,17 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442ea9bfd01b
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e097be241
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629799255828
-created: 1629799255828
-url: "{{ base_url }}/hit/service/{{ id }}"
-name: Mencari layanan
+modified: 1629799255785
+created: 1629799255785
+url: "{{ base_url }}/hit/reference/{{ id }}"
+name: Menghapus referensi
 description: ""
-method: GET
+method: DELETE
 body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1629799255828
+metaSortKey: -1629799255785
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

@@ -1,10 +1,10 @@
 _id: req_wrk_fa1347018fb348f79356e6a4ae51442e4da0ee9b
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1628839687173
-created: 1628839687173
+modified: 1629799255815
+created: 1629799255815
 url: "{{ base_url }}/hit/status/{{ id }}"
-name: Mencari data status permintaan di aplikasi helpdesk
+name: Mencari status permintaan
 description: ""
 method: GET
 body: {}
@@ -14,7 +14,7 @@ parameters:
     value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1628839687173
+metaSortKey: -1629799255815
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

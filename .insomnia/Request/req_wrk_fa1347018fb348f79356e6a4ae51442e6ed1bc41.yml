@@ -1,10 +1,10 @@
 _id: req_wrk_fa1347018fb348f79356e6a4ae51442e6ed1bc41
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1628839687201
-created: 1628839687201
+modified: 1629799255822
+created: 1629799255822
 url: "{{ base_url }}/hit/operation/{{ id }}"
-name: Mencari data menu operator di aplikasi helpdesk
+name: Mencari menu operator
 description: ""
 method: GET
 body: {}
@@ -14,7 +14,7 @@ parameters:
     value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1628839687201
+metaSortKey: -1629799255822
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

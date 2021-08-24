@@ -1,10 +1,10 @@
 _id: req_wrk_fa1347018fb348f79356e6a4ae51442e3abf6d8d
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1628839687188
-created: 1628839687188
+modified: 1629799255818
+created: 1629799255818
 url: "{{ base_url }}/hit/modul/{{ id }}"
-name: Mencari data modul di aplikasi helpdesk
+name: Mencari modul
 description: ""
 method: GET
 body: {}
@@ -14,7 +14,7 @@ parameters:
     value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1628839687188
+metaSortKey: -1629799255818
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

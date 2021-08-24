@@ -1,17 +1,18 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442ea9bfd01b
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e2bfd5dcf
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629799255828
-created: 1629799255828
-url: "{{ base_url }}/hit/service/{{ id }}"
-name: Mencari layanan
+modified: 1629799255766
+created: 1629799255766
+url: "{{ base_url }}/hit/menu"
+name: Menambahkan menu
 description: ""
-method: GET
-body: {}
+method: POST
+body:
+  mimeType: multipart/form-data
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1629799255828
+metaSortKey: -1629799255766
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

@@ -1,11 +1,11 @@
 _id: spc_2789965ca4f740aa9a3fd66407975326
 type: ApiSpec
 parentId: wrk_fa1347018fb348f79356e6a4ae51442e
-modified: 1628851360028
+modified: 1629799256035
 created: 1628825656815
 fileName: INFO_HELPDESK
 contents: >-
-  openapi: "3.0.0"
+  openapi: '3.0.0'
 
   info:
     description: "<b>Helpdesk API</b> adalah modul dari aplikasi info yang berisikan data permintaan dan layanan yang dimiliki oleh divisi IT"
@@ -18,9 +18,13 @@ contents: >-
         - "ervin@indonesian-aerospace.com"
   servers:
     - url: "http://api"
+      description : "Local"
     - url: "http://helpdesk-api-dev"
+      description : "Development"
     - url: "http://helpdesk-api-test"
+      description : "Testing"
     - url: "https://helpdesk-api.indonesian-aerospace.com"
+      description : "Production"
   tags:
 
   - name: "General"
@@ -40,7 +44,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data layanan di aplikasi helpdesk"
+        summary: "Mencari layanan"
         description: "Mencari data layanan di aplikasi helpdesk"   
         produces:
         - "application/json"
@@ -60,7 +64,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data permintaan di aplikasi helpdesk"
+        summary: "Mencari permintaan"
         description: "Mencari data permintaan di aplikasi helpdesk"   
         produces:
         - "application/json"
@@ -84,7 +88,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data menu operator di aplikasi helpdesk"
+        summary: "Mencari menu operator"
         description: "Mencari data menu operator di aplikasi helpdesk"   
         produces:
         - "application/json"
@@ -104,7 +108,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data modul di aplikasi helpdesk"
+        summary: "Mencari modul"
         description: "Mencari data modul di aplikasi helpdesk"   
         produces:
         - "application/json"
@@ -124,7 +128,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data status permintaan di aplikasi helpdesk"
+        summary: "Mencari status permintaan"
         description: "Mencari data status permintaan di aplikasi helpdesk"   
         produces:
         - "application/json"
@@ -144,7 +148,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data laporan permintaan di aplikasi helpdesk dalam bulan di tahun tertentu"
+        summary: "Mencari permintaan per bulan dan tahun"
         description: "Mencari data status permintaan di aplikasi helpdesk dalam bulan di tahun tertentu"   
         produces:
         - "application/json"
@@ -172,7 +176,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data laporan permintaan di aplikasi helpdesk dalam bulan secara detail"
+        summary: "Mencari detail permintaan per bulan detail"
         description: "Mencari data status permintaan di aplikasi helpdesk dalam bulan secara detail"   
         produces:
         - "application/json"
@@ -201,7 +205,7 @@ contents: >-
       get:
         tags:
         - "General"
-        summary: "Mencari data laporan permintaan di aplikasi helpdesk dalam tahun"
+        summary: "Mencari permintaan per tahun"
         description: "Mencari data status permintaan di aplikasi helpdesk dalam tahun"   
         produces:
         - "application/json"
@@ -222,10 +226,10 @@ contents: >-
           "405":
             description: "Method not allowed"
     /hit/ticket/{id}/tahun/{tahun}/category/detail:
-        get:
+      get:
         tags:
         - "General"
-        summary: "Mencari data laporan permintaan di aplikasi helpdesk dalam tahun secara detail"
+        summary: "Mencari detail permintaan per tahun "
         description: "Mencari data status permintaan di aplikasi helpdesk dalam tahun secara detail"   
         produces:
         - "application/json"
@@ -246,9 +250,319 @@ contents: >-
           "405":
             description: "Method not allowed"
 
-    /hit/activity/{id}:
+    /hit/activity:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari aktifitas"
+        description: "Mencari data aktifitas di aplikasi helpdesk dengan kombinasinya adalah: <br/>[1.] Jika status kosong, akan dicari aktifitas dengan NIK dan limit dengan offset atau akan dicari aktifitas dengan ticket detail nya dengan level.<br/> [2.] Jika status [ticket] akan mengambil data aktifitas seluruhnya berdasarkan ticket tertentu.<br/>[3.] Jika status [level] akan mengambil data aktivitas berdasarkan level/alurnya"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "status"
+          in: "query"
+          description: "ID status yang spesifik: [ticket|level]"
+          type: "string"
+        - name: "nik"
+          in: "query"
+          description: "NIK Karyawan"
+          type: "string"
+        - name: "ticket"
+          in: "query"
+          description: "ID Ticket"
+          type: "string"
+        - name: "limit"
+          in: "query"
+          description: "Limit data yang ditampilkan"
+          type: "string"
+        - name: "offset"
+          in: "query"
+          description: "Offset data yang ditampilkan"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    /hit/reference:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari referensi"
+        description: "Mencari data referensi di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "kode_service"
+          in: "query"
+          description: "Kode Layanan"
+          type: "string"
+        - name: "ticket"
+          in: "query"
+          description: "ID Ticket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+      post:
+        tags:
+        - "General"
+        summary: "Menambahkan referensi"
+        description: "Menambahkan data referensi di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  ticket:
+                    description: "Nomor Ticket"
+                    type: string
+                  nik:
+                    description: "NIK Karyawan"
+                    schema:
+                      type: string
+                  kode_service:
+                    description: "Kode Layanan"
+                    schema:
+                      type: string
+                  judul:
+                    description: "Judul File"
+                    schema:
+                      type: string
+                  gambar:
+                    description: "File nya"
+                    type: image
+                    format: binary
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
     /hit/reference/{aksi}/{id}:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari referensi"
+        description: "Mencari data referensi di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "aksi"
+          in: "path"
+          description: "Aksi referensi [data|img]"
+          type: "string"
+        - name: "id"
+          in: "path"
+          description: "ID Referensi"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    /hit/reference/{id}:
+      delete:
+        tags:
+        - "General"
+        summary: "Menghapus referensi"
+        description: "Menghapus data referensi di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "id"
+          in: "path"
+          description: "ID Referensi"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
     /hit/menu/{id}:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari Menu"
+        description: "Mencari data menu di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "id"
+          in: "path"
+          description: "ID Menu"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+      put:
+        tags:
+        - "General"
+        summary: "Menupdate Menu"
+        description: "Menupdate data menu di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "id"
+          in: "path"
+          description: "ID Menu"
+          type: "string"
+        requestBody:
+          content:
+            application/x-www-form-urlencoded:
+              schema:
+                type: object
+                properties:
+                  nama_menu:
+                    description: "Nama Menu"
+                    schema:
+                      type: string
+                  deskripsi_menu:
+                    description: "Deskripsi Menu"
+                    schema:
+                      type: string
+                  tampilan_menu:
+                    description: "Tampilan Menu di page"
+                    schema:
+                      type: string
+                  tipe_menu:
+                    description: "Tipe Menu [SC(Layanan)|OP(Operasi)]"
+                    schema:
+                      type: string
+                  path_menu:
+                    description: "Path Menu"
+                    schema:
+                      type: string
+                  icon_menu:
+                    description: "Icon Menu"
+                    schema:
+                      type: string
+                  entry:
+                    description: "NIK Entry"
+                    schema:
+                      type: string
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+      delete:
+        tags:
+        - "General"
+        summary: "Menghapus Menu"
+        description: "Menghapus data menu di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "id"
+          in: "path"
+          description: "ID Menu"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    /hit/menu:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari Menu by ID"
+        description: "Mencari data menu di aplikasi helpdesk berdasarkan otoritas user"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "view"
+          in: "query"
+          description: "Halaman view saat ini [helpdesk|sap]"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+      post:
+        tags:
+        - "General"
+        summary: "Menambahkan menu"
+        description: "Menambahkan data menu di aplikasi helpdesk"   
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  id_menu:
+                    name: "ID Menu"
+                    description: "ID Menu"
+                    type: string
+                  id_parent:
+                    description: "ID Parent Menu"
+                    schema:
+                      type: string
+                  kode_menu:
+                    description: "Kode Menu"
+                    schema:
+                      type: string
+                  nama_menu:
+                    description: "Nama Menu"
+                    schema:
+                      type: string
+                  deskripsi_menu:
+                    description: "Deskripsi Menu"
+                    schema:
+                      type: string
+                  tampilan_menu:
+                    description: "Tampilan Menu di page"
+                    schema:
+                      type: string
+                  tipe_menu:
+                    description: "Tipe Menu [SC(Layanan)|OP(Operasi)]"
+                    schema:
+                      type: string
+                  path_menu:
+                    description: "Path Menu"
+                    schema:
+                      type: string
+                  icon_menu:
+                    description: "Icon Menu"
+                    schema:
+                      type: string
+                  entry:
+                    description: "NIK Entry"
+                    schema:
+                      type: string
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
     /hit/log/email/{id}:
     /hit/manager/{id}:
 contentType: yaml
