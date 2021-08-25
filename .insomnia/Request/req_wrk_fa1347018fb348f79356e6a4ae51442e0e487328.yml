@@ -1,8 +1,8 @@
 _id: req_wrk_fa1347018fb348f79356e6a4ae51442e0e487328
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629799255770
-created: 1629799255770
+modified: 1629874875438
+created: 1629873183561
 url: "{{ base_url }}/hit/menu"
 name: Mencari Menu by ID
 description: ""
@@ -14,7 +14,7 @@ parameters:
     value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1629799255770
+metaSortKey: -1629873183561
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

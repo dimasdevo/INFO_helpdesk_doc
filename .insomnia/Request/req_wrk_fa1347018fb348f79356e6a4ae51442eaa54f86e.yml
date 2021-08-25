@@ -1,8 +1,8 @@
 _id: req_wrk_fa1347018fb348f79356e6a4ae51442eaa54f86e
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629799255802
-created: 1629799255802
+modified: 1629874875456
+created: 1629873183575
 url: "{{ base_url }}/hit/ticket/{{ id }}/tahun/{{ tahun }}/category/detail"
 name: "Mencari detail permintaan per tahun "
 description: ""
@@ -11,7 +11,7 @@ body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1629799255802
+metaSortKey: -1629873183575
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

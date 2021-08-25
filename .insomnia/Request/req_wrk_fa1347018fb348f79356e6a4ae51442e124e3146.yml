@@ -1,20 +1,20 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442e6ed1bc41
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e124e3146
 type: Request
-parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629874875466
-created: 1629873183583
-url: "{{ base_url }}/hit/operation/{{ id }}"
-name: Mencari menu operator
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e4e7afebc
+modified: 1629874875423
+created: 1629874875423
+url: "{{ base_url }}/hit/admin/ticket/detail"
+name: Mencari tiket layanan admin
 description: ""
 method: GET
 body: {}
 parameters:
-  - name: kode_service
+  - name: ticket
     disabled: true
     value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1629873183583
+metaSortKey: -1629874875423
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

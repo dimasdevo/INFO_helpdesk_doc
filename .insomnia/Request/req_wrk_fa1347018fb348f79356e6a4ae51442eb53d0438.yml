@@ -1,10 +1,10 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442eaa9d12a1
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442eb53d0438
 type: Request
-parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629874875450
-created: 1629873183571
-url: "{{ base_url }}/hit/reference"
-name: Menambahkan referensi
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e4e7afebc
+modified: 1629874875426
+created: 1629874875426
+url: "{{ base_url }}/hit/admin/ticket"
+name: Menambahkan tiket layanan admin
 description: ""
 method: POST
 body:
@@ -12,7 +12,7 @@ body:
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1629873183571
+metaSortKey: -1629874875426
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

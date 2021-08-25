@@ -1,7 +1,7 @@
 _id: spc_2789965ca4f740aa9a3fd66407975326
 type: ApiSpec
 parentId: wrk_fa1347018fb348f79356e6a4ae51442e
-modified: 1629799256035
+modified: 1629875302475
 created: 1628825656815
 fileName: INFO_HELPDESK
 contents: >-
@@ -509,7 +509,8 @@ contents: >-
         tags:
         - "General"
         summary: "Menambahkan menu"
-        description: "Menambahkan data menu di aplikasi helpdesk"   
+        description: "Menambahkan data menu di aplikasi helpdesk" 
+        operationId: addMenu
         requestBody:
           content:
             multipart/form-data:
@@ -519,7 +520,6 @@ contents: >-
                   id_menu:
                     name: "ID Menu"
                     description: "ID Menu"
-                    type: string
                   id_parent:
                     description: "ID Parent Menu"
                     schema:
@@ -553,7 +553,7 @@ contents: >-
                     schema:
                       type: string
                   entry:
-                    description: "NIK Entry"
+                    description: "NIK Entry"    
                     schema:
                       type: string
         responses:
@@ -563,6 +563,162 @@ contents: >-
             description: "Invalid"
           "405":
             description: "Method not allowed"
-    /hit/log/email/{id}:
-    /hit/manager/{id}:
+    /hit/log/email:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari log email"
+        description: "Mencari data log email di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    /hit/manager:
+      get:
+        tags:
+        - "General"
+        summary: "Mencari Manager"
+        description: "Mencari data manager berdasarkan nik di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "nik"
+          in: "path"
+          description: "NIK Karyawan"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    /hit/admin/ticket:
+      get:
+        tags:
+        - "Admin"
+        summary: "Mencari tiket layanan admin"
+        description: "Mencari tiket layanan admin berdasarkan ticket di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+      post:
+        tags:
+        - "Admin"
+        summary: "Menambahkan tiket layanan admin"
+        description: "Menambahkan tiket layanan admin di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket diisi jika untuk update"
+          type: "string"
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  kode_status:
+                    description: "Kode Status *"
+                    type: string
+                    example: "CBU"
+                  kode_request:
+                    description: "Kode Request"
+                    type: string
+                    example: "OU"
+                  kode_service:
+                    description: "Kode Layanan"
+                    type: string
+                    example: "ADM"
+                  kode_aplikasi:
+                    description: "Kode Aplikasi"
+                    type: string
+                    example: "HIT"
+                  nik:
+                    description: "NIK Pemohon"
+                    type: string
+                    example: "180137"
+                  nama:
+                    description: "Kode Request"
+                    type: string
+                    example: "CBU"
+                  organisasi:
+                    description: "Organisasi Pemohon"
+                    type: string
+                    example: "IT2200"
+                  email:
+                    description: "Email Pemohon"
+                    type: string
+                    example: "example@indonesian-aerospace.com"
+                  telepon:
+                    description: "Telepon Pemohon"
+                    type: string
+                    example: "-"
+                  deskripsi:
+                    description: "Deskripsi Permohonan"
+                    type: string
+                    example: "Please.."
+                  assign:
+                    description: "Penanggung Jawab *"
+                    type: string
+                    example: "180137"
+                  catatan:
+                    description: "Catatan Permohonan *"
+                    type: string
+                    example: "Note.."
+                  rating:
+                    description: "Rating Layanan *"
+                    type: string
+                    example: 5
+                  role_user:
+                    description: "Role user"
+                    type: object
+                    example: [{kode_role: "HIT_SAP_BAS",action: "ADD"}]
+
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+
+    /hit/admin/ticket/detail:
+      get:
+        tags:
+        - "Admin"
+        summary: "Mencari tiket layanan admin"
+        description: "Mencari tiket layanan admin berdasarkan ticket secara detail di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
 contentType: yaml

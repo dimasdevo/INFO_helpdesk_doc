@@ -1,8 +1,8 @@
 _id: req_wrk_fa1347018fb348f79356e6a4ae51442ecc1e49ed
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629799255812
-created: 1629799255812
+modified: 1629874875461
+created: 1629873183579
 url: "{{ base_url }}/hit/ticket/{{ id }}/bulan/{{ bulan }}/tahun/{{ tahun }}"
 name: Mencari permintaan per bulan dan tahun
 description: ""
@@ -11,7 +11,7 @@ body: {}
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1629799255812
+metaSortKey: -1629873183579
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

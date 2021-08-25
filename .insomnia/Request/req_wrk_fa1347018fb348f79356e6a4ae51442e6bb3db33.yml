@@ -1,8 +1,8 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442e2bfd5dcf
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e6bb3db33
 type: Request
 parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
-modified: 1629799255766
-created: 1629799255766
+modified: 1629874875436
+created: 1629873183559
 url: "{{ base_url }}/hit/menu"
 name: Menambahkan menu
 description: ""
@@ -12,7 +12,7 @@ body:
 parameters: []
 headers: []
 authentication: {}
-metaSortKey: -1629799255766
+metaSortKey: -1629873183559
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
