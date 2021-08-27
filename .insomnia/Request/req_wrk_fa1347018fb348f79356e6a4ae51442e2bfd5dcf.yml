@@ -1,0 +1,22 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e2bfd5dcf
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e9239ee2c
+modified: 1629799255766
+created: 1629799255766
+url: "{{ base_url }}/hit/menu"
+name: Menambahkan menu
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1629799255766
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

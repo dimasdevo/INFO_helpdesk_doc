@@ -1,10 +1,10 @@
 _id: spc_2789965ca4f740aa9a3fd66407975326
 type: ApiSpec
 parentId: wrk_fa1347018fb348f79356e6a4ae51442e
-modified: 1629884689036
+modified: 1630036347379
 created: 1628825656815
 fileName: INFO_HELPDESK
-contents: >-
+contents: >
   openapi: '3.0.0'
 
   info:
@@ -39,6 +39,8 @@ contents: >-
     description: "Semua tentang data helpdesk layanan internet"
   - name: "SAP"
     description: "Semua tentang data helpdesk layanan sap"
+  - name: "Ask"
+    description: "Semua tentang data helpdesk layanan tanya jawab"
   paths:
     /hit/service/{id}:
       get:
@@ -745,8 +747,7 @@ contents: >-
           "400":
             description: "Invalid"
           "405":
-            description: "Method not allowed"
-            
+            description: "Method not allowed"          
       post:
         tags:
         - "Aplikasi"
@@ -899,6 +900,335 @@ contents: >-
         - name: "ticket"
           in: "query"
           description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+            
+    /hit/aplikasi/ticket/diskusi:
+      get:
+        tags:
+        - "Aplikasi"
+        summary: "Mencari diskusi di tiket aplikasi"
+        description: "Mencari diskusi di tiket layanan aplikasi berdasarkan ID di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+      post:
+        tags:
+        - "Aplikasi"
+        summary: "Menambahkan diskusi di tiket Aplikasi"
+        description: "Menambahkan diskusi di tiket layanan Aplikasi di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  ticket:
+                    description: "Nomor Ticket"
+                    type: string
+                    example: "2021010100001"
+                  pesan:
+                    description: "Konten diskuri"
+                    type: string
+                    example: "Ok"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    
+    /hit/ask/ticket:
+      get:
+        tags:
+        - "Ask"
+        summary: "Mencari tiket layanan ask"
+        description: "Mencari tiket layanan ask berdasarkan ID di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+      post:
+        tags:
+        - "Ask"
+        summary: "Menambahkan tiket layanan Aplikasi"
+        description: "Menambahkan tiket layanan Aplikasi di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket diisi jika untuk update"
+          type: "string"
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  kode_status:
+                    description: "Kode Status *"
+                    type: string
+                    example: "CBU"
+                  kode_request:
+                    description: "Kode Request"
+                    type: string
+                    example: "ASK"
+                  kode_service:
+                    description: "Kode Layanan"
+                    type: string
+                    example: "ASK"
+                  nik:
+                    description: "NIK Pemohon"
+                    type: string
+                    example: "180137"
+                  nama:
+                    description: "Nama Pemohon"
+                    type: string
+                    example: "DIMAS R"
+                  organisasi:
+                    description: "Organisasi Pemohon"
+                    type: string
+                    example: "IT2200"
+                  email:
+                    description: "Email Pemohon"
+                    type: string
+                    example: "example@indonesian-aerospace.com"
+                  telepon:
+                    description: "Telepon Pemohon"
+                    type: string
+                    example: "-"
+                  pertanyaan:
+                    description: "Detail Pertanyaan"
+                    type: string
+                    example: "Please.."
+                  jawaban:
+                    description: "Detail Jawaban *"
+                    type: string
+                    example: "Please.."
+                  assign:
+                    description: "Penanggung Jawab *"
+                    type: string
+                    example: "180137"
+                  catatan:
+                    description: "Catatan Permohonan *"
+                    type: string
+                    example: "Note.."
+                  rating:
+                    description: "Rating Layanan *"
+                    type: string
+                    example: 5
+                  kode_role:
+                    description: "Kode Role *"
+                    type: string
+                    example: "HIT_SAP_BAS"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+    
+    /hit/ask/ticket/detail:
+      get:
+        tags:
+        - "Ask"
+        summary: "Mencari tiket layanan ask"
+        description: "Mencari tiket layanan ask berdasarkan ID di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+            
+    /hit/email/ticket:
+      get:
+        tags:
+        - "Email"
+        summary: "Mencari tiket layanan email"
+        description: "Mencari tiket layanan email berdasarkan ID di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"          
+      post:
+        tags:
+        - "Email"
+        summary: "Menambahkan tiket layanan Email"
+        description: "Menambahkan tiket layanan Email di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket diisi jika untuk update"
+          type: "string"
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  kode_status:
+                    description: "Kode Status *"
+                    type: string
+                    example: "CBU"
+                  kode_request:
+                    description: "Kode Request"
+                    type: string
+                    example: "OU"
+                  kode_service:
+                    description: "Kode Layanan"
+                    type: string
+                    example: "ADM"
+                  nik:
+                    description: "NIK Pemohon"
+                    type: string
+                    example: "180137"
+                  nama:
+                    description: "Kode Request"
+                    type: string
+                    example: "CBU"
+                  organisasi:
+                    description: "Organisasi Pemohon"
+                    type: string
+                    example: "IT2200"
+                  email:
+                    description: "Email Pemohon"
+                    type: string
+                    example: "example@indonesian-aerospace.com"
+                  telepon:
+                    description: "Telepon Pemohon"
+                    type: string
+                    example: "-"
+                  deskripsi:
+                    description: "Deskripsi Permohonan"
+                    type: string
+                    example: "Please.."
+                  assign:
+                    description: "Penanggung Jawab *"
+                    type: string
+                    example: "180137"
+                  verify:
+                    description: "Verification *"
+                    type: string
+                    example: "180137"
+                  catatan:
+                    description: "Catatan Permohonan *"
+                    type: string
+                    example: "Note.."
+                  rating:
+                    description: "Rating Layanan *"
+                    type: string
+                    example: 5
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+            
+    /hit/email/ticket/ticketlist:
+      get:
+        tags:
+        - "Email"
+        summary: "Mencari tiket layanan email"
+        description: "Mencari tiket layanan email berdasarkan ID di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+            
+    /hit/email/ticket/detail:
+      get:
+        tags:
+        - "Email"
+        summary: "Mencari tiket layanan email"
+        description: "Mencari tiket layanan email berdasarkan ID di aplikasi helpdesk"   
+        produces:
+        - "application/json"
+        parameters:
+        - name: "ticket"
+          in: "query"
+          description: "Nomor Tiket"
+          type: "string"
+        responses:
+          "200":
+            description: "Succesfull operation"
+          "400":
+            description: "Invalid"
+          "405":
+            description: "Method not allowed"
+     
+    /hit/email/ticket/pending:
+      get:
+        tags:
+        - "Email"
+        summary: "Mencari tiket layanan aplikasi"
+        description: "Mencari tiket layanan aplikasi berdasarkan ID di aplikasi helpdesk"   
+        deprecated: "true"
+        produces:
+        - "application/json"
+        parameters:
+        - name: "nik"
+          in: "query"
+          description: "NIK Penanggung Jawab"
           type: "string"
         responses:
           "200":

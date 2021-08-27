@@ -1,0 +1,27 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e02024870
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e8fba8e82
+modified: 1630030870786
+created: 1630030870786
+url: "{{ base_url }}/hit/aplikasi/ticket"
+name: Mencari tiket layanan aplikasi
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: ticket
+    disabled: true
+    value: undefined
+  - name: idpm
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630030870786
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

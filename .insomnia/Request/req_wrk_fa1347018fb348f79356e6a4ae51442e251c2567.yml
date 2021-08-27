@@ -1,21 +1,20 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442eb53d0438
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e251c2567
 type: Request
-parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e4e7afebc
-modified: 1629874875426
-created: 1629874875426
-url: "{{ base_url }}/hit/admin/ticket"
-name: Menambahkan tiket layanan admin
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e8fba8e82
+modified: 1630030870776
+created: 1630030870776
+url: "{{ base_url }}/hit/aplikasi/ticket/detail"
+name: Mencari tiket layanan aplikasi
 description: ""
-method: POST
-body:
-  mimeType: multipart/form-data
+method: GET
+body: {}
 parameters:
   - name: ticket
     disabled: true
     value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1629874875426
+metaSortKey: -1630030870776
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

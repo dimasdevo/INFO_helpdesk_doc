@@ -1,10 +1,10 @@
-_id: req_wrk_fa1347018fb348f79356e6a4ae51442eb53d0438
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e0a6e833e
 type: Request
-parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e4e7afebc
-modified: 1629874875426
-created: 1629874875426
-url: "{{ base_url }}/hit/admin/ticket"
-name: Menambahkan tiket layanan admin
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e8fba8e82
+modified: 1630030870782
+created: 1630030870782
+url: "{{ base_url }}/hit/aplikasi/ticket"
+name: Menambahkan tiket layanan Aplikasi
 description: ""
 method: POST
 body:
@@ -15,7 +15,7 @@ parameters:
     value: undefined
 headers: []
 authentication: {}
-metaSortKey: -1629874875426
+metaSortKey: -1630030870782
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
