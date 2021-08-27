@@ -1,0 +1,21 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442ea98291fb
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e66c06c11
+modified: 1630049741956
+created: 1630049741956
+url: "{{ base_url }}/hit/internet/ticket/ticketlist"
+name: Mencari tiket internet
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1630049741956
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

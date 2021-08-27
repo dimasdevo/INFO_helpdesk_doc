@@ -1,0 +1,22 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e87c24dda
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e1d72097e
+modified: 1630050742226
+created: 1630050742226
+url: "{{ base_url }}/hit/sap/role"
+name: Mengambil role SAP
+description: ""
+method: PATCH
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1630050742226
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

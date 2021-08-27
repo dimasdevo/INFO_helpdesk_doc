@@ -1,0 +1,22 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e845a8a69
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e66c06c11
+modified: 1630049741940
+created: 1630049741940
+url: "{{ base_url }}/hit/internet/user/{{ id }}"
+name: Mengubah user id internet dan vpn
+description: ""
+method: PUT
+body:
+  mimeType: application/form-urlencoded
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1630049741940
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

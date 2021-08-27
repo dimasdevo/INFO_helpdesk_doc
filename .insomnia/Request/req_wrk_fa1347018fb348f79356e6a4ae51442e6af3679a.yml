@@ -1,0 +1,27 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e6af3679a
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e84add5b2
+modified: 1630049741968
+created: 1630049741968
+url: "{{ base_url }}/hit/email/suggest"
+name: Mencari tiket layanan aplikasi
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: nik
+    disabled: true
+    value: undefined
+  - name: email
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049741969
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

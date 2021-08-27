@@ -1,0 +1,25 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e750a4344
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e84add5b2
+modified: 1630049741985
+created: 1630049741985
+url: "{{ base_url }}/hit/email/ticket"
+name: Menambahkan tiket layanan Email
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters:
+  - name: ticket
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049741985
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

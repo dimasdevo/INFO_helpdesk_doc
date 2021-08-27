@@ -1,0 +1,22 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e24de05bf
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e1d72097e
+modified: 1630050604259
+created: 1630050604259
+url: "{{ base_url }}/hit/sap/role"
+name: Menghapus role SAP
+description: ""
+method: DELETE
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1630050604259
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

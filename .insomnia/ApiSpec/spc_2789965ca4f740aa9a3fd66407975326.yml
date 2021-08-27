@@ -1,7 +1,7 @@
 _id: spc_2789965ca4f740aa9a3fd66407975326
 type: ApiSpec
 parentId: wrk_fa1347018fb348f79356e6a4ae51442e
-modified: 1630039407540
+modified: 1630051491577
 created: 1628825656815
 fileName: INFO_HELPDESK
 contents: "openapi: '3.0.0'
@@ -1160,6 +1160,8 @@ contents: "openapi: '3.0.0'
 
   \          description: \"Method not allowed\"
 
+  \ \ 
+
   \  /hit/manager:
 
   \    get:
@@ -1200,6 +1202,8 @@ contents: "openapi: '3.0.0'
   \        \"405\":
 
   \          description: \"Method not allowed\"
+
+  \ \ 
 
   \  /hit/admin/ticket:
 
@@ -2998,9 +3002,9 @@ contents: "openapi: '3.0.0'
 
   \      - \"Internet\"
 
-  \      summary: \"Mencari user id internet dan vpn\"
+  \      summary: \"Menambah user id internet dan vpn\"
 
-  \      description: \"Mencari user id internet dan vpn\"  \ 
+  \      description: \"Menambah user id internet dan vpn\"  \ 
 
   \      produces:
 
@@ -3051,6 +3055,1351 @@ contents: "openapi: '3.0.0'
   \   \ 
 
   \  /hit/internet/user/{id}:
+
+  \    put:
+
+  \      tags:
+
+  \      - \"Internet\"
+
+  \      summary: \"Mengubah user id internet dan vpn\"
+
+  \      description: \"Mengubah user id internet dan vpn\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"id\"
+
+  \        in: \"path\"
+
+  \        description: \"NIK Karyawan\"
+
+  \        type: \"string\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          application/form-urlencoded:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                account:
+
+  \                  description: \"Daftar Account\"
+
+  \                  type: object
+
+  \                  example: [\"INET\",\"VPN\"]
+
+  \                referensi:
+
+  \                  description: \"ID referensi\"
+
+  \                  type: string
+
+  \                  example: \"1\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \    delete:
+
+  \      tags:
+
+  \      - \"Internet\"
+
+  \      summary: \"Mengubah user id internet dan vpn\"
+
+  \      description: \"Mengubah user id internet dan vpn\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"id\"
+
+  \        in: \"path\"
+
+  \        description: \"NIK Karyawan\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \  /hit/internet/account/{id}:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"Internet\"
+
+  \      summary: \"Mencari account internet\"
+
+  \      description: \"Mencari account internet\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"nik\"
+
+  \        in: \"query\"
+
+  \        description: \"NIK Karyawan\"
+
+  \        type: \"string\"
+
+  \      - name: \"email\"
+
+  \        in: \"query\"
+
+  \        description: \"Email Karyawan\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \  /hit/sap/ticket:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Mencari tiket layanan sap\"
+
+  \      description: \"Mencari tiket layanan sap berdasarkan ID di aplikasi
+  helpdesk\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"ticket\"
+
+  \        in: \"query\"
+
+  \        description: \"Nomor Tiket\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"         \ 
+
+  \    post:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Menambahkan tiket layanan SAP\"
+
+  \      description: \"Menambahkan tiket layanan SAP di aplikasi
+  helpdesk\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"ticket\"
+
+  \        in: \"query\"
+
+  \        description: \"Nomor Tiket diisi jika untuk update\"
+
+  \        type: \"string\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                kode_status:
+
+  \                  description: \"Kode Status *\"
+
+  \                  type: string
+
+  \                  example: \"CBU\"
+
+  \                kode_request:
+
+  \                  description: \"Kode Request\"
+
+  \                  type: string
+
+  \                  example: \"OU\"
+
+  \                kode_service:
+
+  \                  description: \"Kode Layanan\"
+
+  \                  type: string
+
+  \                  example: \"ADM\"
+
+  \                kode_modul:
+
+  \                  description: \"Kode Modul\"
+
+  \                  type: string
+
+  \                  example: \"ENG\"
+
+  \                kode_role:
+
+  \                  description: \"Kode Role\"
+
+  \                  type: string
+
+  \                  example: \"ENG\"
+
+  \                nik:
+
+  \                  description: \"NIK Pemohon\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                nama:
+
+  \                  description: \"Kode Request\"
+
+  \                  type: string
+
+  \                  example: \"CBU\"
+
+  \                organisasi:
+
+  \                  description: \"Organisasi Pemohon\"
+
+  \                  type: string
+
+  \                  example: \"IT2200\"
+
+  \                email:
+
+  \                  description: \"Email Pemohon\"
+
+  \                  type: string
+
+  \                  example: \"example@indonesian-aerospace.com\"
+
+  \                telepon:
+
+  \                  description: \"Telepon Pemohon\"
+
+  \                  type: string
+
+  \                  example: \"-\"
+
+  \                deskripsi:
+
+  \                  description: \"Deskripsi Permohonan\"
+
+  \                  type: string
+
+  \                  example: \"Please..\"
+
+  \                assign:
+
+  \                  description: \"Penanggung Jawab *\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                verify:
+
+  \                  description: \"Verification *\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                catatan:
+
+  \                  description: \"Catatan Permohonan *\"
+
+  \                  type: string
+
+  \                  example: \"Note..\"
+
+  \                rating:
+
+  \                  description: \"Rating Layanan *\"
+
+  \                  type: string
+
+  \                  example: 5
+
+  \                id_sap:
+
+  \                  description: \"ID Sap\"
+
+  \                  type: string
+
+  \                  example: '180137'
+
+  \                role_sap:
+
+  \                  description: \"Role Sap\"
+
+  \                  type: object
+
+  \                  example: [{
+
+  \                     nama_saprole: \"ZIMA\",
+
+  \                     kode_modul: \"ENG\",
+
+  \                     action: \"ADD\"
+
+  \                            }]
+
+  \                nik_manager:
+
+  \                  description: \"NIK Manager\"
+
+  \                  type: string
+
+  \                  example: '080012'
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \  /hit/sap/ticket/ticketlist:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Mencari tiket SAP\"
+
+  \      description: \"Mencari tiket layanan SAP berdasarkan ID di aplikasi
+  helpdesk\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \  /hit/sap/ticket/detail:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Mencari tiket SAP\"
+
+  \      description: \"Mencari tiket layanan sap berdasarkan ID di aplikasi
+  helpdesk\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"ticket\"
+
+  \        in: \"query\"
+
+  \        description: \"Nomor Tiket\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \  \ 
+
+  \  /hit/sap/ticket/pending:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Mencari tiket SAP\"
+
+  \      description: \"Mencari tiket layanan SAP berdasarkan ID di aplikasi
+  helpdesk\"  \ 
+
+  \      deprecated: \"true\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"nik\"
+
+  \        in: \"query\"
+
+  \        description: \"NIK Penanggung Jawab\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \  /hit/sap/role:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Mencari role SAP\"
+
+  \      description: \"Mencari role SAP\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"modul\"
+
+  \        in: \"query\"
+
+  \        description: \"Modul Role\"
+
+  \        type: \"string\"
+
+  \      - name: \"nama_saprole\"
+
+  \        in: \"query\"
+
+  \        description: \"Nama SAP Role\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \    post:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Menambah role SAP\"
+
+  \      description: \"Menambah role SAP\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                nama_saprole:
+
+  \                  description: \"Nama SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ROLE A\"
+
+  \                tipe_saprole:
+
+  \                  description: \"Tipe SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"A\"
+
+  \                deskripsi:
+
+  \                  description: \"Deskripsi SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ROLE A\"
+
+  \                kode_modul:
+
+  \                  description: \"Kode Modul SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ENG\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \    delete:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Menghapus role SAP\"
+
+  \      description: \"Menghapus role SAP\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                nama_saprole:
+
+  \                  description: \"Nama SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ROLE A\"
+
+  \                kode_modul:
+
+  \                  description: \"Kode Modul SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ENG\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \    patch:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Mengambil role SAP\"
+
+  \      description: \"Mengambil role SAP\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              $ref: '#/components/schemas/datatable'
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \   \ 
+
+  \  /hit/sap/role/{id}:
+
+  \    put:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Menambah role SAP\"
+
+  \      description: \"Menambah role SAP\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"id\"
+
+  \        in: \"query\"
+
+  \        description: \"Nama SAP Role\"
+
+  \        type: \"string\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                nama_saprole:
+
+  \                  description: \"Nama SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ROLE A\"
+
+  \                tipe_saprole:
+
+  \                  description: \"Tipe SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"A\"
+
+  \                deskripsi:
+
+  \                  description: \"Deskripsi SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ROLE A\"
+
+  \                kode_modul:
+
+  \                  description: \"Kode Modul SAP Role\"
+
+  \                  type: object
+
+  \                  example: \"ENG\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \ \ 
+
+  \  /hit/sap/user:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Mencari user SAP\"
+
+  \      description: \"Mencari user SAP\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"id_sap\"
+
+  \        in: \"query\"
+
+  \        description: \"ID SAP\"
+
+  \        type: \"string\"
+
+  \      - name: \"nik\"
+
+  \        in: \"query\"
+
+  \        description: \"NIK Karyawan\"
+
+  \        type: \"string\"
+
+  \      - name: \"org\"
+
+  \        in: \"query\"
+
+  \        description: \"Organisasi Karyawan\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \         \ 
+
+  \    post:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Menambah user SAP\"
+
+  \      description: \"Menambah user SAP\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                kode_status:
+
+  \                  description: \"status\"
+
+  \                  type: string
+
+  \                  example: \"CBU\"
+
+  \                kode_modul:
+
+  \                  description: \"Kode Modul\"
+
+  \                  type: string
+
+  \                  example: \"ENG\"
+
+  \                nik:
+
+  \                  description: \"NIK Pemohon\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                assign:
+
+  \                  description: \"Penanggung Jawab *\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                id_sap:
+
+  \                  description: \"ID Sap\"
+
+  \                  type: string
+
+  \                  example: '180137'
+
+  \                saprole:
+
+  \                  description: \"Role Sap\"
+
+  \                  type: object
+
+  \                  example: [{
+
+  \                     nama_saprole: \"ZIMA\",
+
+  \                     kode_modul: \"ENG\",
+
+  \                     action: \"ADD\"
+
+  \                            }]
+
+  \                isEmail:
+
+  \                  description: \"Email Sended?\"
+
+  \                  type: boolean
+
+  \                  example: true
+
+  \                referensi:
+
+  \                  description: \"Referensi ID\"
+
+  \                  type: string
+
+  \                  example: '1'
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \ \ 
+
+  \    delete:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Menambah user SAP\"
+
+  \      description: \"Menambah user SAP\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                kode_status:
+
+  \                  description: \"status\"
+
+  \                  type: string
+
+  \                  example: \"CBU\"
+
+  \                kode_modul:
+
+  \                  description: \"Kode Modul\"
+
+  \                  type: string
+
+  \                  example: \"ENG\"
+
+  \                nik:
+
+  \                  description: \"NIK Pemohon\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                assign:
+
+  \                  description: \"Penanggung Jawab *\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                id_sap:
+
+  \                  description: \"ID Sap\"
+
+  \                  type: string
+
+  \                  example: '180137'
+
+  \                saprole:
+
+  \                  description: \"Role Sap\"
+
+  \                  type: object
+
+  \                  example: [{
+
+  \                     nama_saprole: \"ZIMA\",
+
+  \                     kode_modul: \"ENG\",
+
+  \                     action: \"ADD\"
+
+  \                            }]
+
+  \                isEmail:
+
+  \                  description: \"Email Sended?\"
+
+  \                  type: boolean
+
+  \                  example: true
+
+  \                referensi:
+
+  \                  description: \"Referensi ID\"
+
+  \                  type: string
+
+  \                  example: '1'
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \ \ 
+
+  \  /hit/sap/user/{id}:
+
+  \    put:
+
+  \      tags:
+
+  \      - \"SAP\"
+
+  \      summary: \"Menambah user SAP\"
+
+  \      description: \"Menambah user SAP\"
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"id_sap\"
+
+  \        in: \"path\"
+
+  \        description: \"ID SAP\"
+
+  \        type: \"string\"
+
+  \      requestBody:
+
+  \        content:
+
+  \          multipart/form-data:
+
+  \            schema:
+
+  \              type: object
+
+  \              properties:
+
+  \                kode_status:
+
+  \                  description: \"status\"
+
+  \                  type: string
+
+  \                  example: \"CBU\"
+
+  \                kode_modul:
+
+  \                  description: \"Kode Modul\"
+
+  \                  type: string
+
+  \                  example: \"ENG\"
+
+  \                nik:
+
+  \                  description: \"NIK Pemohon\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                assign:
+
+  \                  description: \"Penanggung Jawab *\"
+
+  \                  type: string
+
+  \                  example: \"180137\"
+
+  \                id_sap:
+
+  \                  description: \"ID Sap\"
+
+  \                  type: string
+
+  \                  example: '180137'
+
+  \                saprole:
+
+  \                  description: \"Role Sap\"
+
+  \                  type: object
+
+  \                  example: [{
+
+  \                     nama_saprole: \"ZIMA\",
+
+  \                     kode_modul: \"ENG\",
+
+  \                     action: \"ADD\"
+
+  \                            }]
+
+  \                isEmail:
+
+  \                  description: \"Email Sended?\"
+
+  \                  type: boolean
+
+  \                  example: true
+
+  \                referensi:
+
+  \                  description: \"Referensi ID\"
+
+  \                  type: string
+
+  \                  example: '1'
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Invalid\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \ \ 
+
+  components:
+
+  \  schemas:
+
+  \    datatable:
+
+  \      type: object
+
+  \      properties:
+
+  \        start:
+
+  \          type: integer
+
+  \          example: 0
+
+  \        length:
+
+  \          type: integer
+
+  \          example: 10
+
+  \        draw:
+
+  \          type: integer
+
+  \          example: 1
+
+  \        order:
+
+  \          type: object
+
+  \          example: [
+
+  \            {
+
+  \              column: 0,
+
+  \              dir: \"asc\"
+
+  \             }
+
+  \          ]
+
+  \        columns:
+
+  \          type: object
+
+  \          example: [
+
+  \            {
+
+  \              data: \"ticket\",
+
+  \              name: \"\",
+
+  \              searchable: \"true\",
+
+  \              orderable: \"true\",
+
+  \              search: [{
+
+  \                value: \"\",
+
+  \                regex: \"false\",
+
+  \              }]
+
+  \            },
+
+  \            {
+
+  \              data: \"nik\",
+
+  \              name: \"\",
+
+  \              searchable: \"true\",
+
+  \              orderable: \"true\"
+
+  \            },
+
+  \            ]
+
+  \        search:
+
+  \          type: object
+
+  \          example:\ 
+
+  \            {'value':'160260'}\ 
+
+  \  securitySchemes:
+
+  \    ApiKeyAuth:
+
+  \      type: apiKey
+
+  \      in: header
+
+  \      name: token
 
   \  "
 contentType: yaml

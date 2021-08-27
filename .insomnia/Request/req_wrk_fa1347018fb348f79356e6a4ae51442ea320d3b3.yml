@@ -1,0 +1,25 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442ea320d3b3
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e66c06c11
+modified: 1630049741959
+created: 1630049741959
+url: "{{ base_url }}/hit/internet/ticket"
+name: Menambahkan tiket internet
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters:
+  - name: ticket
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049741959
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

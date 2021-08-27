@@ -1,0 +1,24 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e64d98b74
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e1d72097e
+modified: 1630049741916
+created: 1630049741916
+url: "{{ base_url }}/hit/sap/ticket/pending"
+name: Mencari tiket SAP
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: nik
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049741916
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,27 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e81b9efc5
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e66c06c11
+modified: 1630049741946
+created: 1630049741946
+url: "{{ base_url }}/hit/internet/user"
+name: Mencari user id internet dan vpn
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: nik
+    disabled: true
+    value: undefined
+  - name: email
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049741946
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

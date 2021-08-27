@@ -1,0 +1,24 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442ed871aab7
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e3562777b
+modified: 1630049741991
+created: 1630049741991
+url: "{{ base_url }}/hit/ask/ticket/detail"
+name: Mencari tiket layanan ask
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: ticket
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049741991
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

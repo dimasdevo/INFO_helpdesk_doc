@@ -1,0 +1,25 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e120b5ad1
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e1d72097e
+modified: 1630049741927
+created: 1630049741927
+url: "{{ base_url }}/hit/sap/ticket"
+name: Menambahkan tiket layanan SAP
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters:
+  - name: ticket
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049741927
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

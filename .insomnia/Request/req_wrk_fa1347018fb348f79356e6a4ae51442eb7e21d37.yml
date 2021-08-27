@@ -1,0 +1,21 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442eb7e21d37
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e84add5b2
+modified: 1630049741981
+created: 1630049741981
+url: "{{ base_url }}/hit/email/ticket/ticketlist"
+name: Mencari tiket layanan email
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1630049741981
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

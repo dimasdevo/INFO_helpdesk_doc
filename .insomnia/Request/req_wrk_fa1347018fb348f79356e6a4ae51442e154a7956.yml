@@ -1,0 +1,24 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e154a7956
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e8fba8e82
+modified: 1630049742005
+created: 1630049742005
+url: "{{ base_url }}/hit/aplikasi/ticket/diskusi"
+name: Mencari diskusi di tiket aplikasi
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: ticket
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630049742005
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

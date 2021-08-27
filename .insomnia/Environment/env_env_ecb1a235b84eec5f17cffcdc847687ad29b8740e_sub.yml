@@ -8,6 +8,7 @@ data:
   scheme: http
   base_path: ""
   host: api
+  token: token
 dataPropertyOrder: null
 color: null
 isPrivate: false

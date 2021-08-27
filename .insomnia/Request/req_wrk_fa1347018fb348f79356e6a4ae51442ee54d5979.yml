@@ -1,0 +1,27 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442ee54d5979
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e1d72097e
+modified: 1630050604267
+created: 1630050604267
+url: "{{ base_url }}/hit/sap/role"
+name: Mencari role SAP
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: modul
+    disabled: true
+    value: undefined
+  - name: nama_saprole
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630050604267
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

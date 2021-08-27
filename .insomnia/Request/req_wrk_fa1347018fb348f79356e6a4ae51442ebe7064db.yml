@@ -1,0 +1,22 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442ebe7064db
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e8fba8e82
+modified: 1630049742000
+created: 1630049742000
+url: "{{ base_url }}/hit/aplikasi/ticket/diskusi"
+name: Menambahkan diskusi di tiket Aplikasi
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1630049742000
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

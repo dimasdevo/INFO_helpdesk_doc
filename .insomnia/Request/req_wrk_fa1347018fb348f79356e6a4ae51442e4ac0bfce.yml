@@ -1,0 +1,25 @@
+_id: req_wrk_fa1347018fb348f79356e6a4ae51442e4ac0bfce
+type: Request
+parentId: fld_wrk_fa1347018fb348f79356e6a4ae51442e1d72097e
+modified: 1630050604253
+created: 1630050604253
+url: "{{ base_url }}/hit/sap/role/{{ id }}"
+name: Menambah role SAP
+description: ""
+method: PUT
+body:
+  mimeType: multipart/form-data
+parameters:
+  - name: id
+    disabled: true
+    value: undefined
+headers: []
+authentication: {}
+metaSortKey: -1630050604253
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
