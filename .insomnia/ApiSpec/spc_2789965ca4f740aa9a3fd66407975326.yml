@@ -1,7 +1,7 @@
 _id: spc_2789965ca4f740aa9a3fd66407975326
 type: ApiSpec
 parentId: wrk_fa1347018fb348f79356e6a4ae51442e
-modified: 1630051491577
+modified: 1630485587461
 created: 1628825656815
 fileName: INFO_HELPDESK
 contents: "openapi: '3.0.0'
@@ -75,7 +75,7 @@ contents: "openapi: '3.0.0'
 
   paths:
 
-  \  /hit/service/{id}:
+  \  /hit/service:
 
   \    get:
 
@@ -83,23 +83,13 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari layanan\"
+  \      summary: \"Cek layanan\"
 
   \      description: \"Mencari data layanan di aplikasi helpdesk\"  \ 
 
   \      produces:
 
   \      - \"application/json\"
-
-  \      parameters:
-
-  \      - name: \"id\"
-
-  \        in: \"path\"
-
-  \        description: \"ID layanan yang spesifik\"
-
-  \        type: \"string\"
 
   \      responses:
 
@@ -109,13 +99,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
-  \  /hit/request/{id}:
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/request:
 
   \    get:
 
@@ -123,7 +125,7 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari permintaan\"
+  \      summary: \"Cek permintaan\"
 
   \      description: \"Mencari data permintaan di aplikasi helpdesk\"  \ 
 
@@ -137,7 +139,7 @@ contents: "openapi: '3.0.0'
 
   \        in: \"query\"
 
-  \        description: \"ID layanan yang spesifik\"
+  \        description: \"ID layanan yang spesifik, semisal: SAP\"
 
   \        type: \"string\"
 
@@ -157,13 +159,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
-  \  /hit/operation/{id}:
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/operation:
 
   \    get:
 
@@ -171,9 +185,10 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari menu operator\"
+  \      summary: \"Cek operasi\"
 
-  \      description: \"Mencari data menu operator di aplikasi helpdesk\"  \ 
+  \      description: \"Mencari daftar layanan operasi di aplikasi
+  helpdesk\"  \ 
 
   \      produces:
 
@@ -197,13 +212,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
-  \  /hit/modul/{id}:
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/modul:
 
   \    get:
 
@@ -211,7 +238,7 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari modul\"
+  \      summary: \"Cek modul\"
 
   \      description: \"Mencari data modul di aplikasi helpdesk\"  \ 
 
@@ -237,13 +264,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
-  \  /hit/status/{id}:
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/status:
 
   \    get:
 
@@ -251,7 +290,7 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari status permintaan\"
+  \      summary: \"Cek status tiket\"
 
   \      description: \"Mencari data status permintaan di aplikasi
   helpdesk\"  \ 
@@ -278,13 +317,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
-  \  /hit/ticket/{id}/bulan/{bulan}/tahun/{tahun}:
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket:
 
   \    get:
 
@@ -292,7 +343,60 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari permintaan per bulan dan tahun\"
+  \      summary: \"Cek tiket\"
+
+  \      description: \"Mencari data status permintaan di aplikasi
+  helpdesk\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"ticket\"
+
+  \        in: \"query\"
+
+  \        description: \"ID tiket\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket/report/bulan/{bulan}/tahun/{tahun}:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"General\"
+
+  \      summary: \"Cek tiket bulanan dan tahunan\"
 
   \      description: \"Mencari data status permintaan di aplikasi helpdesk
   dalam bulan di tahun tertentu\"  \ 
@@ -302,14 +406,6 @@ contents: "openapi: '3.0.0'
   \      - \"application/json\"
 
   \      parameters:
-
-  \      - name: \"id\"
-
-  \        in: \"path\"
-
-  \        description: \"ID status yang spesifik: [report|report-info]\"
-
-  \        type: \"string\"
 
   \      - name: \"bulan\"
 
@@ -335,13 +431,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
-  \  /hit/ticket/{id}/bulan/{bulan}/tahun/{tahun}/category/detail:
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket/report-info/bulan/{bulan}/tahun/{tahun}:
 
   \    get:
 
@@ -349,7 +457,68 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari detail permintaan per bulan detail\"
+  \      summary: \"Cek tiket bulanan & tahunan\"
+
+  \      description: \"Mencari data status permintaan di aplikasi helpdesk
+  dalam bulan di tahun tertentu dengan format info\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"bulan\"
+
+  \        in: \"path\"
+
+  \        description: \"Nomor Bulan{1-12}\"
+
+  \        type: \"string\"
+
+  \      - name: \"tahun\"
+
+  \        in: \"path\"
+
+  \        description: \"4 Digit Angka Tahun\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket/report/bulan/{bulan}/tahun/{tahun}/category/detail:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"General\"
+
+  \      summary: \"Cek tiket bulanan detail\"
 
   \      description: \"Mencari data status permintaan di aplikasi helpdesk
   dalam bulan secara detail\"  \ 
@@ -392,14 +561,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
+  \      security:
 
-  \  /hit/ticket/{id}/tahun/{tahun}:
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket/report-info/bulan/{bulan}/tahun/{tahun}/category/detail:
 
   \    get:
 
@@ -407,7 +587,76 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari permintaan per tahun\"
+  \      summary: \"Cek tiket bulanan detail\"
+
+  \      description: \"Mencari data status permintaan di aplikasi helpdesk
+  dalam bulan secara detail dengan format info\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
+
+  \      - name: \"id\"
+
+  \        in: \"path\"
+
+  \        description: \"ID status yang spesifik: [report|report-info]\"
+
+  \        type: \"string\"
+
+  \      - name: \"bulan\"
+
+  \        in: \"path\"
+
+  \        description: \"Nomor Bulan{1-12}\"
+
+  \        type: \"string\"
+
+  \      - name: \"tahun\"
+
+  \        in: \"path\"
+
+  \        description: \"4 Digit Angka Tahun\"
+
+  \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket/tabel/tahun/{tahun}:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"General\"
+
+  \      summary: \"Cek tiket per tahun\"
 
   \      description: \"Mencari data status permintaan di aplikasi helpdesk
   dalam tahun\"  \ 
@@ -418,13 +667,58 @@ contents: "openapi: '3.0.0'
 
   \      parameters:
 
-  \      - name: \"id\"
+  \      - name: \"tahun\"
 
   \        in: \"path\"
 
-  \        description: \"ID status yang spesifik: [table|rating]\"
+  \        description: \"4 Digit Angka Tahun\"
 
   \        type: \"string\"
+
+  \      responses:
+
+  \        \"200\":
+
+  \          description: \"Succesfull operation\"
+
+  \        \"400\":
+
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
+
+  \        \"405\":
+
+  \          description: \"Method not allowed\"
+
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket/rating/tahun/{tahun}:
+
+  \    get:
+
+  \      tags:
+
+  \      - \"General\"
+
+  \      summary: \"Cek rating per tahun\"
+
+  \      description: \"Mencari data status permintaan di aplikasi helpdesk
+  dalam tahun\"  \ 
+
+  \      produces:
+
+  \      - \"application/json\"
+
+  \      parameters:
 
   \      - name: \"tahun\"
 
@@ -442,13 +736,25 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
-  \  /hit/ticket/{id}/tahun/{tahun}/category/detail:
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
+
+  \  /hit/ticket/rating/tahun/{tahun}/category/detail:
 
   \    get:
 
@@ -456,7 +762,7 @@ contents: "openapi: '3.0.0'
 
   \      - \"General\"
 
-  \      summary: \"Mencari detail permintaan per tahun \"
+  \      summary: \"Cek rating tahunan detail \"
 
   \      description: \"Mencari data status permintaan di aplikasi helpdesk
   dalam tahun secara detail\"  \ 
@@ -467,14 +773,6 @@ contents: "openapi: '3.0.0'
 
   \      parameters:
 
-  \      - name: \"id\"
-
-  \        in: \"path\"
-
-  \        description: \"ID status yang spesifik: [table|rating]\"
-
-  \        type: \"string\"
-
   \      - name: \"tahun\"
 
   \        in: \"path\"
@@ -491,12 +789,23 @@ contents: "openapi: '3.0.0'
 
   \        \"400\":
 
-  \          description: \"Invalid\"
+  \          description: \"Bad Request\"
+
+  \        \"401\":
+
+  \          description: \"Not Authorized\"
+
+  \        \"403\":
+
+  \          description: \"Forbidden\"
 
   \        \"405\":
 
   \          description: \"Method not allowed\"
 
+  \      security:
+
+  \        - ApiKeyAuth: []\ 
 
   \  /hit/activity:
 
